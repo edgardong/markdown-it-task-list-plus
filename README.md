@@ -3,8 +3,6 @@
 A [markdown-it](https://www.npmjs.com/package/markdown-it) plugin to create GitHub-style [task lists](https://github.com/blog/1825-task-lists-in-all-markdown-documents)
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/edgardong/markdown-it-task-list-plus.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/edgardong/markdown-it-task-list-plus.svg?branch=master)](https://travis-ci.org/edgardong/markdown-it-task-list-plus)
-[![Code Climate](https://codeclimate.com/github/edgardong/markdown-it-task-list-plus/badges/gpa.svg)](https://codeclimate.com/github/edgardong/markdown-it-task-list-plus)
 
 ## What it does
 
@@ -27,32 +25,32 @@ npm install markdown-it-task-list-plus
 Use it the same as a normal markdown-it plugin:
 
 ```js
-var md = require('markdown-it');
-var taskLists = require('markdown-it-task-list-plus');
+var md = require('markdown-it')
+var taskListPlus = require('markdown-it-task-list-plus')
 
-var parser = md().use(taskLists);
+var parser = md().use(taskListPlus)
 
-var result = parser.render(...); // markdown string containing task list items
+var result = parser.render(...) // markdown string containing task list items
 ```
 
 The rendered checkboxes are disabled; to change this, pass a truthy value into
 the `enabled` property of the plugin options:
 
 ```js
-var parser = md().use(taskLists, {enabled: true});
+var parser = md().use(taskLists, {enabled: true})
 ```
 
 If you'd like to wrap the rendered list items in a `<label>` element for UX
 purposes, pass a truthy value to the `label` property of the plugin options:
 
 ```js
-var parser = md().use(taskLists, {label: true});
+var parser = md().use(taskLists, {label: true})
 ```
 
 To add the label after the checkbox pass a truthy value to `labelAfter` property:
 
 ```js
-var parser = md().use(taskLists, {label: true, labelAfter: true});
+var parser = md().use(taskLists, {label: true, labelAfter: true})
 ```
 
 **Note:** This option does require the `label` option to be truthy.
@@ -74,4 +72,4 @@ npm test
 
 ## License
 
-ISC
+MIT
